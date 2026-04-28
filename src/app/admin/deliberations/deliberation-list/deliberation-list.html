@@ -1,1 +1,80 @@
-<p>deliberation-list works!</p>
+<div class="page">
+  <div class="page-header">
+    <h2>⚖️ Délibérations</h2>
+  </div>
+
+  <!-- Session selector -->
+  <div class="filter-bar">
+    <label>Session :</label>
+    <select (change)="selectSession(+$any($event.target).value)">
+      <option value="" disabled>-- Choisir une session --</option>
+      @for (s of sessions(); track s.id) {
+        <option [value]="s.id" [selected]="s.id === selectedSessionId()">
+          Session {{ s.id }} — {{ s.type === 'normale' ? 'Normale' : 'Rattrapage' }}
+          ({{ s.dateDebut }}) — {{ s.statut }}
+        </option>
+      }
+    </select>
+
+    <button
+      class="btn btn-primary"
+      [disabled]="computing() || !selectedSessionId()"
+      (click)="lancerDeliberation()">
+      @if (computing()) { ⏳ Calcul en cours... }
+      @else { ⚖️ Lancer la délibération }
+    </button>
+  </div>
+
+  @if (error()) {
+    <div class="alert-error">{{ error() }}</div>
+  }
+  @if (success()) {
+    <div class="alert-success">{{ success() }}</div>
+  }
+  @if (loading()) {
+    <div class="loading">Chargement...</div>
+  }
+
+  @if (!loading() && deliberations().length > 0) {
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Rang</th>
+          <th>Étudiant</th>
+          <th>Moyenne</th>
+          <th>Décision</th>
+          <th>Mention</th>
+          <th>Modules NV</th>
+          <th>Modules &lt;5</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (d of deliberations(); track d.id) {
+            <tr>
+              <td><strong>#{{ d.rang }}</strong></td>
+              <td>{{ getEtudiantNom(d.etudiantId) }}</td>
+              <td [style.color]="d.moyenne < 10 ? 'red' : 'green'">
+                <strong>{{ d.moyenne | noteFormat }}</strong>
+              </td>
+              <td>
+                <span [class]="getDecisionClass(d.decision)">
+                  {{ d.decision | decisionLabel }}
+                </span>
+              </td>
+              <td>{{ d.mention | mention }}</td>
+              <td>{{ d.modulesNonValides }}</td>
+              <td>{{ d.modulesSous5 }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+
+  @if (!loading() && deliberations().length === 0 && selectedSessionId()) {
+    <div class="empty-state">
+      Aucune délibération pour cette session. Cliquez sur "Lancer la délibération".
+    </div>
+  }
+</div>
