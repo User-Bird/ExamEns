@@ -2,10 +2,11 @@
 import { Component, inject, computed } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../core/services/auth';
+import {TitleCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, TitleCasePipe],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss'
 })
