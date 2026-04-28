@@ -1,0 +1,47 @@
+.filter-bar {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-end;
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    label { font-size: 0.85rem; color: #666; font-weight: 500; }
+
+    select {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      min-width: 220px;
+    }
+  }
+}
+
+.stats-bar {
+  display: flex;
+  gap: 2rem;
+  background: #f8f7ff;
+  border: 1px solid #e0e0ff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .stat-label { font-size: 0.8rem; color: #666; }
+  .stat-value { font-size: 1.3rem; font-weight: bold; color: #4f46e5; }
+}
+
+.row-fail { background: #fff5f5; }
+
+tfoot td {
+  background: #f9f9f9;
+  padding: 0.5rem 0.75rem;
+}

@@ -1,1 +1,110 @@
-<p>notes-module works!</p>
+<div class="page">
+  <div class="page-header">
+    <h2>📋 Notes par Module</h2>
+  </div>
+
+  @if (error()) { <div class="alert-error">{{ error() }}</div> }
+
+  <!-- Selectors -->
+  <div class="filter-bar">
+    <div class="field">
+      <label>Module</label>
+      <select (change)="onModuleChange($any($event.target).value)">
+        @for (m of modules(); track m.id) {
+          <option [value]="m.id">{{ m.code }} — {{ m.nom }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Examen (Session)</label>
+      <select (change)="onExamenChange($any($event.target).value)">
+        @for (e of examens(); track e.id) {
+          <option [value]="e.id">{{ e.date }} — Session {{ e.sessionId }}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  @if (loading()) { <div class="loading">Chargement...</div> }
+
+  @if (!loading() && noteRows().length > 0) {
+
+    <!-- Stats bar -->
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-label">Moyenne classe</span>
+        <span class="stat-value">{{ moyenne() | noteFormat }}</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Taux réussite</span>
+        <span class="stat-value" [style.color]="tauxReussite() >= 50 ? 'green' : 'red'">
+          {{ tauxReussite() }}%
+        </span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Validés</span>
+        <span class="stat-value">{{ nbValides() }} / {{ noteRows().length }}</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Module</span>
+        <span class="stat-value">{{ selectedModule()?.nom }}</span>
+      </div>
+    </div>
+
+    <!-- Notes table -->
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Étudiant</th>
+          <th>CNE</th>
+          <th>Groupe</th>
+          <th>CC (/20)</th>
+          <th>Examen (/20)</th>
+          <th>Note Finale</th>
+          <th>Statut</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (row of noteRows(); track row.etudiant.id; let i = $index) {
+            <tr [class.row-fail]="!row.valide">
+              <td>{{ i + 1 }}</td>
+              <td>{{ row.etudiant.nom }} {{ row.etudiant.prenom }}</td>
+              <td>{{ row.etudiant.cne }}</td>
+              <td>{{ row.etudiant.groupe }}</td>
+              <td>{{ row.noteCC !== null ? (row.noteCC | noteFormat) : '—' }}</td>
+              <td>{{ row.noteExamen | noteFormat }}</td>
+              <td [style.color]="row.valide ? 'green' : 'red'">
+                <strong>{{ row.noteFinale | noteFormat }}</strong>
+              </td>
+              <td>
+                @if (row.absent) {
+                  <span class="badge-danger">Absent</span>
+                } @else if (row.valide) {
+                  <span class="badge-success">✅ Validé</span>
+                } @else {
+                  <span class="badge-warning">❌ Non validé</span>
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="6"><strong>Moyenne générale</strong></td>
+          <td [style.color]="moyenne() >= 10 ? 'green' : 'red'">
+            <strong>{{ moyenne() | noteFormat }}</strong>
+          </td>
+          <td></td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  }
+
+  @if (!loading() && noteRows().length === 0 && modules().length > 0) {
+    <div class="empty-state">Aucune note disponible pour cet examen.</div>
+  }
+</div>
