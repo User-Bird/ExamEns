@@ -1,1 +1,202 @@
-<p>saisie-notes works!</p>
+<!-- src/app/enseignant/saisie-notes/saisie-notes/saisie-notes.html -->
+<div class="saisie-page">
+
+  <!-- ── Header ── -->
+  <div class="page-header">
+    <h2>✏️ Saisie des Notes</h2>
+    <p class="subtitle">Saisissez les notes de vos examens module par module</p>
+  </div>
+
+  <!-- ── Selectors ── -->
+  <div class="selectors-card">
+    <div class="selector-row">
+
+      <div class="field">
+        <label for="session">Session d'examen</label>
+        <select id="session" (change)="onSessionChange($event)">
+          <option value="">-- Sélectionner une session --</option>
+          @for (s of sessions(); track s.id) {
+            <option [value]="s.id">
+              {{ s.type === 'normale' ? '📋 Normale' : '🔄 Rattrapage' }}
+              &nbsp;|&nbsp; {{ s.dateDebut }} → {{ s.dateFin }}
+              &nbsp;[{{ s.statut }}]
+            </option>
+          }
+        </select>
+      </div>
+
+      @if (examensFiltres().length > 0) {
+        <div class="field">
+          <label for="examen">Examen (votre module)</label>
+          <select id="examen" (change)="onExamenChange($event)">
+            <option value="">-- Sélectionner un examen --</option>
+            @for (e of examensFiltres(); track e.id) {
+              <option [value]="e.id">
+                {{ moduleName(e) }} — {{ e.date }} — {{ e.salle }}
+              </option>
+            }
+          </select>
+        </div>
+      } @else if (selectedSessionId() && !loading()) {
+        <div class="no-examen">
+          ℹ️ Aucun examen trouvé pour vos modules dans cette session.
+        </div>
+      }
+
+    </div>
+  </div>
+
+  <!-- ── Loading ── -->
+  @if (loading()) {
+    <div class="loading-bar">
+      <div class="spinner"></div>
+      <span>Chargement en cours...</span>
+    </div>
+  }
+
+  <!-- ── Error ── -->
+  @if (error()) {
+    <div class="alert-error">⚠️ {{ error() }}</div>
+  }
+
+  <!-- ── Success ── -->
+  @if (saved()) {
+    <div class="alert-success">✅ Notes enregistrées avec succès !</div>
+  }
+
+  <!-- ── Module info banner ── -->
+  @if (selectedModule(); as mod) {
+    <div class="module-banner">
+      <span class="mod-code">{{ mod.code }}</span>
+      <span class="mod-name">{{ mod.nom }}</span>
+      <span class="mod-coef">Coeff. {{ mod.coefficient }}</span>
+      @if (mod.hasCC) {
+        <span class="badge badge-cc">CC + Examen (30% / 70%)</span>
+      } @else {
+        <span class="badge badge-exam">Examen uniquement (100%)</span>
+      }
+      <span class="count">{{ notesArray.length }} étudiant(s)</span>
+    </div>
+  }
+
+  <!-- ── Notes FormArray Grid ── -->
+  @if (notesArray.length > 0) {
+    <form [formGroup]="notesForm" (ngSubmit)="onSubmit()">
+      <div class="table-wrapper">
+        <table class="notes-table">
+          <thead>
+          <tr>
+            <th class="col-num">#</th>
+            <th class="col-nom">Étudiant</th>
+            @if (selectedModule()?.hasCC) {
+              <th class="col-note">CC <small>/20</small></th>
+            }
+            <th class="col-note">Examen <small>/20</small></th>
+            <th class="col-note">Note finale</th>
+            <th class="col-absent">Absent</th>
+          </tr>
+          </thead>
+          <tbody formArrayName="notes">
+            @for (row of notesArray.controls; track $index; let i = $index) {
+              <tr [formGroupName]="i"
+                  [class.row-insufficient]="isNoteInsuffisante(i)"
+                  [class.row-absent]="row.get('absent')!.value">
+
+                <td class="col-num">{{ i + 1 }}</td>
+
+                <td class="col-nom">
+                  <span class="student-name">{{ row.get('etudiantNom')!.value }}</span>
+                </td>
+
+                @if (selectedModule()?.hasCC) {
+                  <td class="col-note">
+                    <input
+                      type="number"
+                      formControlName="noteCC"
+                      class="note-input"
+                      [class.invalid]="row.get('noteCC')!.invalid && row.get('noteCC')!.touched"
+                      placeholder="—"
+                      min="0" max="20" step="0.25"
+                    />
+                    @if (row.get('noteCC')!.invalid && row.get('noteCC')!.touched) {
+                      <span class="field-error">0–20</span>
+                    }
+                  </td>
+                }
+
+                <td class="col-note">
+                  <input
+                    type="number"
+                    formControlName="noteExamen"
+                    class="note-input"
+                    [class.invalid]="row.get('noteExamen')!.invalid && row.get('noteExamen')!.touched"
+                    placeholder="—"
+                    min="0" max="20" step="0.25"
+                  />
+                  @if (row.get('noteExamen')!.invalid && row.get('noteExamen')!.touched) {
+                    <span class="field-error">0–20</span>
+                  }
+                </td>
+
+                <td class="col-note">
+                  @if (row.get('absent')!.value) {
+                    <span class="badge-absent">ABS</span>
+                  } @else if (calculerNoteFinale(i) !== null) {
+                    <span class="note-finale"
+                          [class.note-fail]="(calculerNoteFinale(i) ?? 20) < 10"
+                          [class.note-pass]="(calculerNoteFinale(i) ?? 0) >= 10">
+                      {{ calculerNoteFinale(i) | number:'1.2-2' }}
+                    </span>
+                  } @else {
+                    <span class="note-pending">—</span>
+                  }
+                </td>
+
+                <td class="col-absent">
+                  <label class="checkbox-wrap">
+                    <input type="checkbox" formControlName="absent" />
+                    <span class="checkmark"></span>
+                  </label>
+                </td>
+
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ── Stats bar ── -->
+      <div class="stats-bar">
+        <div class="stat">
+          <span class="stat-label">Total</span>
+          <span class="stat-value">{{ notesArray.length }}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Absents</span>
+          <span class="stat-value absent">{{ countAbsents() }}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Notes &lt; 10</span>
+          <span class="stat-value fail">{{ countInsuffisant() }}</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Notes ≥ 10</span>
+          <span class="stat-value pass">{{ countValide() }}</span>
+        </div>
+      </div>
+
+      <!-- ── Actions ── -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" [disabled]="saving()">
+          @if (saving()) {
+            <span class="spinner-sm"></span> Enregistrement...
+          } @else {
+            💾 Enregistrer toutes les notes
+          }
+        </button>
+      </div>
+
+    </form>
+  }
+
+</div>
