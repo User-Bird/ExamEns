@@ -48,7 +48,7 @@ export class Dashboard implements OnInit {
       etudiants:     this.etudiantSvc.getAll(),
       modules:       this.moduleSvc.getAll(),
       sessions:      this.sessionSvc.getAll(),
-      deliberations: this.deliberationSvc.getBySession(1),
+      deliberations: this.deliberationSvc.getAll(),
       notes:         this.noteSvc.getAll(),
     }).subscribe({
       next: ({ etudiants, modules, deliberations }) => {

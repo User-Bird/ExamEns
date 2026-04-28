@@ -1,1 +1,62 @@
-<p>dashboard works!</p>
+<div class="page">
+  <div class="page-header">
+    <h2>📊 Dashboard — {{ enseignantNom() }}</h2>
+  </div>
+
+  @if (loading()) { <div class="loading">Chargement...</div> }
+
+  @if (!loading() && moduleStats().length > 0) {
+
+    <!-- KPI cards per module -->
+    <div class="module-kpi-grid">
+      @for (stat of moduleStats(); track stat.module.id) {
+        <div class="kpi-card">
+          <div class="kpi-code">{{ stat.module.code }}</div>
+          <div class="kpi-nom">{{ stat.module.nom }}</div>
+          <div class="kpi-row">
+            <span class="kpi-label">Moyenne classe</span>
+            <span class="kpi-value">{{ stat.moyenneClasse | noteFormat }}</span>
+          </div>
+          <div class="kpi-row">
+            <span class="kpi-label">Taux réussite</span>
+            <span class="kpi-value" [style.color]="stat.tauxReussite >= 50 ? 'green' : 'red'">
+              {{ stat.tauxReussite }}%
+            </span>
+          </div>
+          <div class="kpi-row">
+            <span class="kpi-label">Nb étudiants</span>
+            <span class="kpi-value">{{ stat.nbEtudiants }}</span>
+          </div>
+          <div class="kpi-row">
+            <span class="kpi-label">Coeff.</span>
+            <span class="kpi-value">{{ stat.module.coefficient }}</span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-card">
+      <h3>Moyenne & Taux de réussite par module</h3>
+      <canvas #chartModules></canvas>
+    </div>
+
+    <!-- Per-module note distribution table -->
+    <h3 style="margin-top:2rem">📋 Détail des notes par module</h3>
+    @for (stat of moduleStats(); track stat.module.id) {
+      <div class="module-detail">
+        <h4>{{ stat.module.nom }} ({{ stat.module.code }})</h4>
+        <div class="note-buckets">
+          <span class="bucket fail">0-5 : {{ stat.notes.filter(n => n < 5).length }}</span>
+          <span class="bucket warn">5-10 : {{ stat.notes.filter(n => n >= 5 && n < 10).length }}</span>
+          <span class="bucket ok">10-15 : {{ stat.notes.filter(n => n >= 10 && n < 15).length }}</span>
+          <span class="bucket best">15-20 : {{ stat.notes.filter(n => n >= 15).length }}</span>
+        </div>
+      </div>
+    }
+  }
+
+  @if (!loading() && moduleStats().length === 0) {
+    <div class="empty-state">Aucun module assigné.</div>
+  }
+</div>

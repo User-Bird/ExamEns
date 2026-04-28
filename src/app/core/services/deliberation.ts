@@ -25,6 +25,10 @@ export class DeliberationService {
     return this.http.delete<void>(`${this.API}/deliberations/${id}`);
   }
 
+  getAll(): Observable<Deliberation[]> {
+    return this.http.get<Deliberation[]>(`${this.API}/deliberations`);
+  }
+
   calculerResultats(sessionId: number): Observable<Omit<Deliberation, 'id'>[]> {
     return forkJoin({
       etudiants: this.http.get<Etudiant[]>(`${this.API}/etudiants`),
@@ -33,7 +37,14 @@ export class DeliberationService {
       notes:     this.http.get<Note[]>(`${this.API}/notes`),
     }).pipe(
       map(({ etudiants, examens, modules, notes }) => {
-
+          console.log('DEBUG', {
+            etudiants: etudiants.length,
+            examens: examens.length,
+            modules: modules.length,
+            notes: notes.length
+          });
+          console.log('First note:', notes[0]);
+          console.log('First examen:', examens[0]);
         const results = etudiants.map(etudiant => {
           let sommeNotes = 0;
           let sommeCoefs = 0;
@@ -41,11 +52,11 @@ export class DeliberationService {
           let modulesSous5 = 0;
 
           examens.forEach(examen => {
-            const module = modules.find(m => m.id === examen.moduleId);
+            const module = modules.find(m => Number(m.id) === Number(examen.moduleId));
             if (!module) return;
 
             const note = notes.find(n =>
-              n.examenId === examen.id && n.etudiantId === etudiant.id
+              Number(n.examenId) === Number(examen.id) && Number(n.etudiantId) === Number(etudiant.id)
             );
             if (!note) return;
 
