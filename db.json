@@ -1,153 +1,2001 @@
 {
   "users": [
-    { "id": 1, "nom": "Admin", "prenom": "Système", "email": "admin@ens.ma", "password": "admin123", "role": "admin" },
-    { "id": 2, "nom": "Alaoui", "prenom": "Mohammed", "email": "m.alaoui@ens.ma", "password": "prof123", "role": "enseignant" },
-    { "id": 3, "nom": "Benali", "prenom": "Fatima", "email": "f.benali@ens.ma", "password": "prof123", "role": "enseignant" },
-    { "id": 4, "nom": "Idrissi", "prenom": "Youssef", "email": "youssef.idrissi@ens.ma", "password": "etud123", "role": "etudiant", "etudiantId": 1 },
-    { "id": 5, "nom": "Cherkaoui", "prenom": "Sara", "email": "sara.cherkaoui@ens.ma", "password": "etud123", "role": "etudiant", "etudiantId": 2 },
-    { "id": 6, "nom": "Tazi", "prenom": "Amine", "email": "amine.tazi@ens.ma", "password": "etud123", "role": "etudiant", "etudiantId": 3 }
+    {
+      "id": "1",
+      "nom": "Admin",
+      "prenom": "Système",
+      "email": "admin@ens.ma",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "nom": "Alaoui",
+      "prenom": "Mohammed",
+      "email": "m.alaoui@ens.ma",
+      "password": "prof123",
+      "role": "enseignant"
+    },
+    {
+      "id": "3",
+      "nom": "Benali",
+      "prenom": "Fatima",
+      "email": "f.benali@ens.ma",
+      "password": "prof123",
+      "role": "enseignant"
+    },
+    {
+      "id": "4",
+      "nom": "Idrissi",
+      "prenom": "Youssef",
+      "email": "youssef.idrissi@ens.ma",
+      "password": "etud123",
+      "role": "etudiant",
+      "etudiantId": 1
+    },
+    {
+      "id": "5",
+      "nom": "Cherkaoui",
+      "prenom": "Sara",
+      "email": "sara.cherkaoui@ens.ma",
+      "password": "etud123",
+      "role": "etudiant",
+      "etudiantId": 2
+    },
+    {
+      "id": "6",
+      "nom": "Tazi",
+      "prenom": "Amine",
+      "email": "amine.tazi@ens.ma",
+      "password": "etud123",
+      "role": "etudiant",
+      "etudiantId": 3
+    }
   ],
   "filieres": [
-    { "id": 1, "nom": "Informatique", "code": "INFO", "cycle": "Licence" },
-    { "id": 2, "nom": "Mathématiques", "code": "MATH", "cycle": "Licence" }
+    {
+      "id": "1",
+      "nom": "Informatique",
+      "code": "INFO",
+      "cycle": "Licence"
+    },
+    {
+      "id": "2",
+      "nom": "Mathématiques",
+      "code": "MATH",
+      "cycle": "Licence"
+    }
   ],
   "semestres": [
-    { "id": 1, "nom": "Semestre 1", "liereId": 1, "annee": "2025-2026", "actif": true },
-    { "id": 2, "nom": "Semestre 2", "liereId": 1, "annee": "2025-2026", "actif": true }
+    {
+      "id": "1",
+      "nom": "Semestre 1",
+      "liereId": 1,
+      "annee": "2025-2026",
+      "actif": true
+    },
+    {
+      "id": "2",
+      "nom": "Semestre 2",
+      "liereId": 1,
+      "annee": "2025-2026",
+      "actif": true
+    }
   ],
   "modules": [
-    { "id": 1, "nom": "Algorithmique", "code": "ALGO", "semestreId": 1, "enseignantId": 2, "coefficient": 3, "hasCC": true },
-    { "id": 2, "nom": "Programmation Web", "code": "WEB", "semestreId": 1, "enseignantId": 2, "coefficient": 2, "hasCC": true },
-    { "id": 3, "nom": "Base de Données", "code": "BDD", "semestreId": 1, "enseignantId": 3, "coefficient": 3, "hasCC": false },
-    { "id": 4, "nom": "Réseaux", "code": "RES", "semestreId": 2, "enseignantId": 3, "coefficient": 2, "hasCC": true },
-    { "id": 5, "nom": "Mathématiques Discrètes", "code": "MATD", "semestreId": 1, "enseignantId": 2, "coefficient": 2, "hasCC": false },
-    { "id": 6, "nom": "Systèmes d'Exploitation", "code": "SE", "semestreId": 2, "enseignantId": 3, "coefficient": 3, "hasCC": true }
+    {
+      "id": "1",
+      "nom": "Algorithmique",
+      "code": "ALGO",
+      "semestreId": 1,
+      "enseignantId": 2,
+      "coefficient": 3,
+      "hasCC": true
+    },
+    {
+      "id": "2",
+      "nom": "Programmation Web",
+      "code": "WEB",
+      "semestreId": 1,
+      "enseignantId": 2,
+      "coefficient": 2,
+      "hasCC": true
+    },
+    {
+      "id": "3",
+      "nom": "Base de Données",
+      "code": "BDD",
+      "semestreId": 1,
+      "enseignantId": 3,
+      "coefficient": 3,
+      "hasCC": false
+    },
+    {
+      "id": "4",
+      "nom": "Réseaux",
+      "code": "RES",
+      "semestreId": 2,
+      "enseignantId": 3,
+      "coefficient": 2,
+      "hasCC": true
+    },
+    {
+      "id": "5",
+      "nom": "Mathématiques Discrètes",
+      "code": "MATD",
+      "semestreId": 1,
+      "enseignantId": 2,
+      "coefficient": 2,
+      "hasCC": false
+    },
+    {
+      "id": "6",
+      "nom": "Systèmes d'Exploitation",
+      "code": "SE",
+      "semestreId": 2,
+      "enseignantId": 3,
+      "coefficient": 3,
+      "hasCC": true
+    }
   ],
   "etudiants": [
-    { "id": 1,  "nom": "Idrissi",    "prenom": "Youssef",  "cne": "G001", "cin": "BE001", "liereId": 1, "semestreId": 1, "groupe": "G1" },
-    { "id": 2,  "nom": "Cherkaoui", "prenom": "Sara",     "cne": "G002", "cin": "BE002", "liereId": 1, "semestreId": 1, "groupe": "G1" },
-    { "id": 3,  "nom": "Tazi",      "prenom": "Amine",    "cne": "G003", "cin": "BE003", "liereId": 1, "semestreId": 1, "groupe": "G1" },
-    { "id": 4,  "nom": "Bouazza",   "prenom": "Nadia",    "cne": "G004", "cin": "BE004", "liereId": 1, "semestreId": 1, "groupe": "G1" },
-    { "id": 5,  "nom": "Karimi",    "prenom": "Omar",     "cne": "G005", "cin": "BE005", "liereId": 1, "semestreId": 1, "groupe": "G2" },
-    { "id": 6,  "nom": "Fassi",     "prenom": "Leila",    "cne": "G006", "cin": "BE006", "liereId": 1, "semestreId": 1, "groupe": "G2" },
-    { "id": 7,  "nom": "Hajji",     "prenom": "Karim",    "cne": "G007", "cin": "BE007", "liereId": 1, "semestreId": 1, "groupe": "G2" },
-    { "id": 8,  "nom": "Ziani",     "prenom": "Hind",     "cne": "G008", "cin": "BE008", "liereId": 1, "semestreId": 1, "groupe": "G2" },
-    { "id": 9,  "nom": "Moussaoui", "prenom": "Bilal",    "cne": "G009", "cin": "BE009", "liereId": 1, "semestreId": 1, "groupe": "G3" },
-    { "id": 10, "nom": "Lahlou",    "prenom": "Rim",      "cne": "G010", "cin": "BE010", "liereId": 1, "semestreId": 1, "groupe": "G3" },
-    { "id": 11, "nom": "Berrada",   "prenom": "Hamza",    "cne": "G011", "cin": "BE011", "liereId": 1, "semestreId": 1, "groupe": "G3" },
-    { "id": 12, "nom": "Sqalli",    "prenom": "Zineb",    "cne": "G012", "cin": "BE012", "liereId": 1, "semestreId": 1, "groupe": "G3" },
-    { "id": 13, "nom": "Rhazali",   "prenom": "Tarik",    "cne": "G013", "cin": "BE013", "liereId": 1, "semestreId": 1, "groupe": "G4" },
-    { "id": 14, "nom": "Benkirane", "prenom": "Meryem",   "cne": "G014", "cin": "BE014", "liereId": 1, "semestreId": 1, "groupe": "G4" },
-    { "id": 15, "nom": "Ouali",     "prenom": "Zakaria",  "cne": "G015", "cin": "BE015", "liereId": 1, "semestreId": 1, "groupe": "G4" }
+    {
+      "id": "1",
+      "nom": "Idrissi",
+      "prenom": "Youssef",
+      "cne": "G001",
+      "cin": "BE001",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G1"
+    },
+    {
+      "id": "2",
+      "nom": "Cherkaoui",
+      "prenom": "Sara",
+      "cne": "G002",
+      "cin": "BE002",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G1"
+    },
+    {
+      "id": "3",
+      "nom": "Tazi",
+      "prenom": "Amine",
+      "cne": "G003",
+      "cin": "BE003",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G1"
+    },
+    {
+      "id": "4",
+      "nom": "Bouazza",
+      "prenom": "Nadia",
+      "cne": "G004",
+      "cin": "BE004",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G1"
+    },
+    {
+      "id": "5",
+      "nom": "Karimi",
+      "prenom": "Omar",
+      "cne": "G005",
+      "cin": "BE005",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G2"
+    },
+    {
+      "id": "6",
+      "nom": "Fassi",
+      "prenom": "Leila",
+      "cne": "G006",
+      "cin": "BE006",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G2"
+    },
+    {
+      "id": "7",
+      "nom": "Hajji",
+      "prenom": "Karim",
+      "cne": "G007",
+      "cin": "BE007",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G2"
+    },
+    {
+      "id": "8",
+      "nom": "Ziani",
+      "prenom": "Hind",
+      "cne": "G008",
+      "cin": "BE008",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G2"
+    },
+    {
+      "id": "9",
+      "nom": "Moussaoui",
+      "prenom": "Bilal",
+      "cne": "G009",
+      "cin": "BE009",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G3"
+    },
+    {
+      "id": "10",
+      "nom": "Lahlou",
+      "prenom": "Rim",
+      "cne": "G010",
+      "cin": "BE010",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G3"
+    },
+    {
+      "id": "11",
+      "nom": "Berrada",
+      "prenom": "Hamza",
+      "cne": "G011",
+      "cin": "BE011",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G3"
+    },
+    {
+      "id": "12",
+      "nom": "Sqalli",
+      "prenom": "Zineb",
+      "cne": "G012",
+      "cin": "BE012",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G3"
+    },
+    {
+      "id": "13",
+      "nom": "Rhazali",
+      "prenom": "Tarik",
+      "cne": "G013",
+      "cin": "BE013",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G4"
+    },
+    {
+      "id": "14",
+      "nom": "Benkirane",
+      "prenom": "Meryem",
+      "cne": "G014",
+      "cin": "BE014",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G4"
+    },
+    {
+      "id": "15",
+      "nom": "Ouali",
+      "prenom": "Zakaria",
+      "cne": "G015",
+      "cin": "BE015",
+      "liereId": 1,
+      "semestreId": 1,
+      "groupe": "G4"
+    }
   ],
   "sessions": [
-    { "id": 1, "semestreId": 1, "type": "normale",    "dateDebut": "2026-01-10", "dateFin": "2026-01-24", "statut": "terminee" },
-    { "id": 2, "semestreId": 1, "type": "rattrapage",  "dateDebut": "2026-02-10", "dateFin": "2026-02-20", "statut": "planifiee" }
+    {
+      "id": "1",
+      "semestreId": 1,
+      "type": "normale",
+      "dateDebut": "2026-01-10",
+      "dateFin": "2026-01-24",
+      "statut": "deliberee"
+    },
+    {
+      "id": "2",
+      "semestreId": 1,
+      "type": "rattrapage",
+      "dateDebut": "2026-02-10",
+      "dateFin": "2026-02-20",
+      "statut": "planifiee"
+    }
   ],
   "examens": [
-    { "id": 1, "moduleId": 1, "sessionId": 1, "date": "2026-01-12", "duree": 120, "salle": "Amphi A" },
-    { "id": 2, "moduleId": 2, "sessionId": 1, "date": "2026-01-14", "duree": 90,  "salle": "Salle 10" },
-    { "id": 3, "moduleId": 3, "sessionId": 1, "date": "2026-01-16", "duree": 120, "salle": "Amphi B" },
-    { "id": 4, "moduleId": 4, "sessionId": 1, "date": "2026-01-18", "duree": 90,  "salle": "Salle 12" },
-    { "id": 5, "moduleId": 5, "sessionId": 1, "date": "2026-01-20", "duree": 120, "salle": "Amphi A" },
-    { "id": 6, "moduleId": 6, "sessionId": 1, "date": "2026-01-22", "duree": 90,  "salle": "Salle 11" }
+    {
+      "id": "1",
+      "moduleId": 1,
+      "sessionId": 1,
+      "date": "2026-01-12",
+      "duree": 120,
+      "salle": "Amphi A"
+    },
+    {
+      "id": "2",
+      "moduleId": 2,
+      "sessionId": 1,
+      "date": "2026-01-14",
+      "duree": 90,
+      "salle": "Salle 10"
+    },
+    {
+      "id": "3",
+      "moduleId": 3,
+      "sessionId": 1,
+      "date": "2026-01-16",
+      "duree": 120,
+      "salle": "Amphi B"
+    },
+    {
+      "id": "4",
+      "moduleId": 4,
+      "sessionId": 1,
+      "date": "2026-01-18",
+      "duree": 90,
+      "salle": "Salle 12"
+    },
+    {
+      "id": "5",
+      "moduleId": 5,
+      "sessionId": 1,
+      "date": "2026-01-20",
+      "duree": 120,
+      "salle": "Amphi A"
+    },
+    {
+      "id": "6",
+      "moduleId": 6,
+      "sessionId": 1,
+      "date": "2026-01-22",
+      "duree": 90,
+      "salle": "Salle 11"
+    }
   ],
   "notes": [
-    { "id": 1,  "examenId": 1, "etudiantId": 1,  "noteCC": 15, "noteExamen": 14, "noteFinale": 14.3, "absent": false },
-    { "id": 2,  "examenId": 1, "etudiantId": 2,  "noteCC": 12, "noteExamen": 11, "noteFinale": 11.5, "absent": false },
-    { "id": 3,  "examenId": 1, "etudiantId": 3,  "noteCC": 8,  "noteExamen": 7,  "noteFinale": 7.3,  "absent": false },
-    { "id": 4,  "examenId": 1, "etudiantId": 4,  "noteCC": 18, "noteExamen": 17, "noteFinale": 17.3, "absent": false },
-    { "id": 5,  "examenId": 1, "etudiantId": 5,  "noteCC": 10, "noteExamen": 9,  "noteFinale": 9.3,  "absent": false },
-    { "id": 6,  "examenId": 1, "etudiantId": 6,  "noteCC": 14, "noteExamen": 13, "noteFinale": 13.3, "absent": false },
-    { "id": 7,  "examenId": 1, "etudiantId": 7,  "noteCC": 6,  "noteExamen": 4,  "noteFinale": 4.6,  "absent": false },
-    { "id": 8,  "examenId": 1, "etudiantId": 8,  "noteCC": 11, "noteExamen": 12, "noteFinale": 11.7, "absent": false },
-    { "id": 9,  "examenId": 1, "etudiantId": 9,  "noteCC": 9,  "noteExamen": 10, "noteFinale": 9.7,  "absent": false },
-    { "id": 10, "examenId": 1, "etudiantId": 10, "noteCC": 16, "noteExamen": 15, "noteFinale": 15.3, "absent": false },
-    { "id": 11, "examenId": 1, "etudiantId": 11, "noteCC": 7,  "noteExamen": 8,  "noteFinale": 7.7,  "absent": false },
-    { "id": 12, "examenId": 1, "etudiantId": 12, "noteCC": 13, "noteExamen": 14, "noteFinale": 13.7, "absent": false },
-    { "id": 13, "examenId": 1, "etudiantId": 13, "noteCC": 5,  "noteExamen": 6,  "noteFinale": 5.7,  "absent": false },
-    { "id": 14, "examenId": 1, "etudiantId": 14, "noteCC": 19, "noteExamen": 18, "noteFinale": 18.3, "absent": false },
-    { "id": 15, "examenId": 1, "etudiantId": 15, "noteCC": 3,  "noteExamen": 4,  "noteFinale": 3.7,  "absent": false },
-
-    { "id": 16, "examenId": 2, "etudiantId": 1,  "noteCC": 14, "noteExamen": 13, "noteFinale": 13.3, "absent": false },
-    { "id": 17, "examenId": 2, "etudiantId": 2,  "noteCC": 10, "noteExamen": 11, "noteFinale": 10.7, "absent": false },
-    { "id": 18, "examenId": 2, "etudiantId": 3,  "noteCC": 7,  "noteExamen": 6,  "noteFinale": 6.3,  "absent": false },
-    { "id": 19, "examenId": 2, "etudiantId": 4,  "noteCC": 17, "noteExamen": 16, "noteFinale": 16.3, "absent": false },
-    { "id": 20, "examenId": 2, "etudiantId": 5,  "noteCC": 9,  "noteExamen": 8,  "noteFinale": 8.3,  "absent": false },
-    { "id": 21, "examenId": 2, "etudiantId": 6,  "noteCC": 15, "noteExamen": 14, "noteFinale": 14.3, "absent": false },
-    { "id": 22, "examenId": 2, "etudiantId": 7,  "noteCC": 4,  "noteExamen": 5,  "noteFinale": 4.7,  "absent": false },
-    { "id": 23, "examenId": 2, "etudiantId": 8,  "noteCC": 12, "noteExamen": 11, "noteFinale": 11.3, "absent": false },
-    { "id": 24, "examenId": 2, "etudiantId": 9,  "noteCC": 8,  "noteExamen": 9,  "noteFinale": 8.7,  "absent": false },
-    { "id": 25, "examenId": 2, "etudiantId": 10, "noteCC": 16, "noteExamen": 17, "noteFinale": 16.7, "absent": false },
-    { "id": 26, "examenId": 2, "etudiantId": 11, "noteCC": 6,  "noteExamen": 7,  "noteFinale": 6.7,  "absent": false },
-    { "id": 27, "examenId": 2, "etudiantId": 12, "noteCC": 13, "noteExamen": 12, "noteFinale": 12.3, "absent": false },
-    { "id": 28, "examenId": 2, "etudiantId": 13, "noteCC": 5,  "noteExamen": 4,  "noteFinale": 4.3,  "absent": false },
-    { "id": 29, "examenId": 2, "etudiantId": 14, "noteCC": 18, "noteExamen": 19, "noteFinale": 18.7, "absent": false },
-    { "id": 30, "examenId": 2, "etudiantId": 15, "noteCC": 2,  "noteExamen": 3,  "noteFinale": 2.7,  "absent": false },
-
-    { "id": 31, "examenId": 3, "etudiantId": 1,  "noteCC": null, "noteExamen": 13, "noteFinale": 13, "absent": false },
-    { "id": 32, "examenId": 3, "etudiantId": 2,  "noteCC": null, "noteExamen": 11, "noteFinale": 11, "absent": false },
-    { "id": 33, "examenId": 3, "etudiantId": 3,  "noteCC": null, "noteExamen": 6,  "noteFinale": 6,  "absent": false },
-    { "id": 34, "examenId": 3, "etudiantId": 4,  "noteCC": null, "noteExamen": 17, "noteFinale": 17, "absent": false },
-    { "id": 35, "examenId": 3, "etudiantId": 5,  "noteCC": null, "noteExamen": 9,  "noteFinale": 9,  "absent": false },
-    { "id": 36, "examenId": 3, "etudiantId": 6,  "noteCC": null, "noteExamen": 14, "noteFinale": 14, "absent": false },
-    { "id": 37, "examenId": 3, "etudiantId": 7,  "noteCC": null, "noteExamen": 4,  "noteFinale": 4,  "absent": false },
-    { "id": 38, "examenId": 3, "etudiantId": 8,  "noteCC": null, "noteExamen": 12, "noteFinale": 12, "absent": false },
-    { "id": 39, "examenId": 3, "etudiantId": 9,  "noteCC": null, "noteExamen": 10, "noteFinale": 10, "absent": false },
-    { "id": 40, "examenId": 3, "etudiantId": 10, "noteCC": null, "noteExamen": 15, "noteFinale": 15, "absent": false },
-    { "id": 41, "examenId": 3, "etudiantId": 11, "noteCC": null, "noteExamen": 8,  "noteFinale": 8,  "absent": false },
-    { "id": 42, "examenId": 3, "etudiantId": 12, "noteCC": null, "noteExamen": 13, "noteFinale": 13, "absent": false },
-    { "id": 43, "examenId": 3, "etudiantId": 13, "noteCC": null, "noteExamen": 6,  "noteFinale": 6,  "absent": false },
-    { "id": 44, "examenId": 3, "etudiantId": 14, "noteCC": null, "noteExamen": 18, "noteFinale": 18, "absent": false },
-    { "id": 45, "examenId": 3, "etudiantId": 15, "noteCC": null, "noteExamen": 3,  "noteFinale": 3,  "absent": false },
-
-    { "id": 46, "examenId": 4, "etudiantId": 1,  "noteCC": 13, "noteExamen": 12, "noteFinale": 12.3, "absent": false },
-    { "id": 47, "examenId": 4, "etudiantId": 2,  "noteCC": 11, "noteExamen": 10, "noteFinale": 10.3, "absent": false },
-    { "id": 48, "examenId": 4, "etudiantId": 3,  "noteCC": 7,  "noteExamen": 8,  "noteFinale": 7.7,  "absent": false },
-    { "id": 49, "examenId": 4, "etudiantId": 4,  "noteCC": 16, "noteExamen": 15, "noteFinale": 15.3, "absent": false },
-    { "id": 50, "examenId": 4, "etudiantId": 5,  "noteCC": 9,  "noteExamen": 7,  "noteFinale": 7.6,  "absent": false },
-    { "id": 51, "examenId": 4, "etudiantId": 6,  "noteCC": 15, "noteExamen": 13, "noteFinale": 13.6, "absent": false },
-    { "id": 52, "examenId": 4, "etudiantId": 7,  "noteCC": 3,  "noteExamen": 4,  "noteFinale": 3.7,  "absent": false },
-    { "id": 53, "examenId": 4, "etudiantId": 8,  "noteCC": 10, "noteExamen": 11, "noteFinale": 10.7, "absent": false },
-    { "id": 54, "examenId": 4, "etudiantId": 9,  "noteCC": 8,  "noteExamen": 9,  "noteFinale": 8.7,  "absent": false },
-    { "id": 55, "examenId": 4, "etudiantId": 10, "noteCC": 17, "noteExamen": 16, "noteFinale": 16.3, "absent": false },
-    { "id": 56, "examenId": 4, "etudiantId": 11, "noteCC": 5,  "noteExamen": 6,  "noteFinale": 5.7,  "absent": false },
-    { "id": 57, "examenId": 4, "etudiantId": 12, "noteCC": 14, "noteExamen": 13, "noteFinale": 13.3, "absent": false },
-    { "id": 58, "examenId": 4, "etudiantId": 13, "noteCC": 4,  "noteExamen": 5,  "noteFinale": 4.7,  "absent": false },
-    { "id": 59, "examenId": 4, "etudiantId": 14, "noteCC": 19, "noteExamen": 18, "noteFinale": 18.3, "absent": false },
-    { "id": 60, "examenId": 4, "etudiantId": 15, "noteCC": 2,  "noteExamen": 3,  "noteFinale": 2.7,  "absent": false },
-
-    { "id": 61, "examenId": 5, "etudiantId": 1,  "noteCC": null, "noteExamen": 14, "noteFinale": 14, "absent": false },
-    { "id": 62, "examenId": 5, "etudiantId": 2,  "noteCC": null, "noteExamen": 10, "noteFinale": 10, "absent": false },
-    { "id": 63, "examenId": 5, "etudiantId": 3,  "noteCC": null, "noteExamen": 7,  "noteFinale": 7,  "absent": false },
-    { "id": 64, "examenId": 5, "etudiantId": 4,  "noteCC": null, "noteExamen": 16, "noteFinale": 16, "absent": false },
-    { "id": 65, "examenId": 5, "etudiantId": 5,  "noteCC": null, "noteExamen": 8,  "noteFinale": 8,  "absent": false },
-    { "id": 66, "examenId": 5, "etudiantId": 6,  "noteCC": null, "noteExamen": 13, "noteFinale": 13, "absent": false },
-    { "id": 67, "examenId": 5, "etudiantId": 7,  "noteCC": null, "noteExamen": 3,  "noteFinale": 3,  "absent": false },
-    { "id": 68, "examenId": 5, "etudiantId": 8,  "noteCC": null, "noteExamen": 11, "noteFinale": 11, "absent": false },
-    { "id": 69, "examenId": 5, "etudiantId": 9,  "noteCC": null, "noteExamen": 9,  "noteFinale": 9,  "absent": false },
-    { "id": 70, "examenId": 5, "etudiantId": 10, "noteCC": null, "noteExamen": 17, "noteFinale": 17, "absent": false },
-    { "id": 71, "examenId": 5, "etudiantId": 11, "noteCC": null, "noteExamen": 6,  "noteFinale": 6,  "absent": false },
-    { "id": 72, "examenId": 5, "etudiantId": 12, "noteCC": null, "noteExamen": 12, "noteFinale": 12, "absent": false },
-    { "id": 73, "examenId": 5, "etudiantId": 13, "noteCC": null, "noteExamen": 5,  "noteFinale": 5,  "absent": false },
-    { "id": 74, "examenId": 5, "etudiantId": 14, "noteCC": null, "noteExamen": 19, "noteFinale": 19, "absent": false },
-    { "id": 75, "examenId": 5, "etudiantId": 15, "noteCC": null, "noteExamen": 2,  "noteFinale": 2,  "absent": false },
-
-    { "id": 76, "examenId": 6, "etudiantId": 1,  "noteCC": 14, "noteExamen": 13, "noteFinale": 13.3, "absent": false },
-    { "id": 77, "examenId": 6, "etudiantId": 2,  "noteCC": 11, "noteExamen": 12, "noteFinale": 11.7, "absent": false },
-    { "id": 78, "examenId": 6, "etudiantId": 3,  "noteCC": 6,  "noteExamen": 7,  "noteFinale": 6.7,  "absent": false },
-    { "id": 79, "examenId": 6, "etudiantId": 4,  "noteCC": 17, "noteExamen": 16, "noteFinale": 16.3, "absent": false },
-    { "id": 80, "examenId": 6, "etudiantId": 5,  "noteCC": 8,  "noteExamen": 7,  "noteFinale": 7.3,  "absent": false },
-    { "id": 81, "examenId": 6, "etudiantId": 6,  "noteCC": 15, "noteExamen": 14, "noteFinale": 14.3, "absent": false },
-    { "id": 82, "examenId": 6, "etudiantId": 7,  "noteCC": 4,  "noteExamen": 3,  "noteFinale": 3.3,  "absent": false },
-    { "id": 83, "examenId": 6, "etudiantId": 8,  "noteCC": 12, "noteExamen": 11, "noteFinale": 11.3, "absent": false },
-    { "id": 84, "examenId": 6, "etudiantId": 9,  "noteCC": 9,  "noteExamen": 8,  "noteFinale": 8.3,  "absent": false },
-    { "id": 85, "examenId": 6, "etudiantId": 10, "noteCC": 16, "noteExamen": 17, "noteFinale": 16.7, "absent": false },
-    { "id": 86, "examenId": 6, "etudiantId": 11, "noteCC": 7,  "noteExamen": 6,  "noteFinale": 6.3,  "absent": false },
-    { "id": 87, "examenId": 6, "etudiantId": 12, "noteCC": 14, "noteExamen": 13, "noteFinale": 13.3, "absent": false },
-    { "id": 88, "examenId": 6, "etudiantId": 13, "noteCC": 5,  "noteExamen": 4,  "noteFinale": 4.3,  "absent": false },
-    { "id": 89, "examenId": 6, "etudiantId": 14, "noteCC": 18, "noteExamen": 19, "noteFinale": 18.7, "absent": false },
-    { "id": 90, "examenId": 6, "etudiantId": 15, "noteCC": 2,  "noteExamen": 3,  "noteFinale": 2.7,  "absent": false }
+    {
+      "id": "1",
+      "examenId": 1,
+      "etudiantId": 1,
+      "noteCC": 15,
+      "noteExamen": 14,
+      "noteFinale": 14.3,
+      "absent": false
+    },
+    {
+      "id": "2",
+      "examenId": 1,
+      "etudiantId": 2,
+      "noteCC": 12,
+      "noteExamen": 11,
+      "noteFinale": 11.5,
+      "absent": false
+    },
+    {
+      "id": "3",
+      "examenId": 1,
+      "etudiantId": 3,
+      "noteCC": 8,
+      "noteExamen": 7,
+      "noteFinale": 7.3,
+      "absent": false
+    },
+    {
+      "id": "4",
+      "examenId": 1,
+      "etudiantId": 4,
+      "noteCC": 18,
+      "noteExamen": 17,
+      "noteFinale": 17.3,
+      "absent": false
+    },
+    {
+      "id": "5",
+      "examenId": 1,
+      "etudiantId": 5,
+      "noteCC": 10,
+      "noteExamen": 9,
+      "noteFinale": 9.3,
+      "absent": false
+    },
+    {
+      "id": "6",
+      "examenId": 1,
+      "etudiantId": 6,
+      "noteCC": 14,
+      "noteExamen": 13,
+      "noteFinale": 13.3,
+      "absent": false
+    },
+    {
+      "id": "7",
+      "examenId": 1,
+      "etudiantId": 7,
+      "noteCC": 6,
+      "noteExamen": 4,
+      "noteFinale": 4.6,
+      "absent": false
+    },
+    {
+      "id": "8",
+      "examenId": 1,
+      "etudiantId": 8,
+      "noteCC": 11,
+      "noteExamen": 12,
+      "noteFinale": 11.7,
+      "absent": false
+    },
+    {
+      "id": "9",
+      "examenId": 1,
+      "etudiantId": 9,
+      "noteCC": 9,
+      "noteExamen": 10,
+      "noteFinale": 9.7,
+      "absent": false
+    },
+    {
+      "id": "10",
+      "examenId": 1,
+      "etudiantId": 10,
+      "noteCC": 16,
+      "noteExamen": 15,
+      "noteFinale": 15.3,
+      "absent": false
+    },
+    {
+      "id": "11",
+      "examenId": 1,
+      "etudiantId": 11,
+      "noteCC": 7,
+      "noteExamen": 8,
+      "noteFinale": 7.7,
+      "absent": false
+    },
+    {
+      "id": "12",
+      "examenId": 1,
+      "etudiantId": 12,
+      "noteCC": 13,
+      "noteExamen": 14,
+      "noteFinale": 13.7,
+      "absent": false
+    },
+    {
+      "id": "13",
+      "examenId": 1,
+      "etudiantId": 13,
+      "noteCC": 5,
+      "noteExamen": 6,
+      "noteFinale": 5.7,
+      "absent": false
+    },
+    {
+      "id": "14",
+      "examenId": 1,
+      "etudiantId": 14,
+      "noteCC": 19,
+      "noteExamen": 18,
+      "noteFinale": 18.3,
+      "absent": false
+    },
+    {
+      "id": "15",
+      "examenId": 1,
+      "etudiantId": 15,
+      "noteCC": 3,
+      "noteExamen": 4,
+      "noteFinale": 3.7,
+      "absent": false
+    },
+    {
+      "id": "16",
+      "examenId": 2,
+      "etudiantId": 1,
+      "noteCC": 14,
+      "noteExamen": 13,
+      "noteFinale": 13.3,
+      "absent": false
+    },
+    {
+      "id": "17",
+      "examenId": 2,
+      "etudiantId": 2,
+      "noteCC": 10,
+      "noteExamen": 11,
+      "noteFinale": 10.7,
+      "absent": false
+    },
+    {
+      "id": "18",
+      "examenId": 2,
+      "etudiantId": 3,
+      "noteCC": 7,
+      "noteExamen": 6,
+      "noteFinale": 6.3,
+      "absent": false
+    },
+    {
+      "id": "19",
+      "examenId": 2,
+      "etudiantId": 4,
+      "noteCC": 17,
+      "noteExamen": 16,
+      "noteFinale": 16.3,
+      "absent": false
+    },
+    {
+      "id": "20",
+      "examenId": 2,
+      "etudiantId": 5,
+      "noteCC": 9,
+      "noteExamen": 8,
+      "noteFinale": 8.3,
+      "absent": false
+    },
+    {
+      "id": "21",
+      "examenId": 2,
+      "etudiantId": 6,
+      "noteCC": 15,
+      "noteExamen": 14,
+      "noteFinale": 14.3,
+      "absent": false
+    },
+    {
+      "id": "22",
+      "examenId": 2,
+      "etudiantId": 7,
+      "noteCC": 4,
+      "noteExamen": 5,
+      "noteFinale": 4.7,
+      "absent": false
+    },
+    {
+      "id": "23",
+      "examenId": 2,
+      "etudiantId": 8,
+      "noteCC": 12,
+      "noteExamen": 11,
+      "noteFinale": 11.3,
+      "absent": false
+    },
+    {
+      "id": "24",
+      "examenId": 2,
+      "etudiantId": 9,
+      "noteCC": 8,
+      "noteExamen": 9,
+      "noteFinale": 8.7,
+      "absent": false
+    },
+    {
+      "id": "25",
+      "examenId": 2,
+      "etudiantId": 10,
+      "noteCC": 16,
+      "noteExamen": 17,
+      "noteFinale": 16.7,
+      "absent": false
+    },
+    {
+      "id": "26",
+      "examenId": 2,
+      "etudiantId": 11,
+      "noteCC": 6,
+      "noteExamen": 7,
+      "noteFinale": 6.7,
+      "absent": false
+    },
+    {
+      "id": "27",
+      "examenId": 2,
+      "etudiantId": 12,
+      "noteCC": 13,
+      "noteExamen": 12,
+      "noteFinale": 12.3,
+      "absent": false
+    },
+    {
+      "id": "28",
+      "examenId": 2,
+      "etudiantId": 13,
+      "noteCC": 5,
+      "noteExamen": 4,
+      "noteFinale": 4.3,
+      "absent": false
+    },
+    {
+      "id": "29",
+      "examenId": 2,
+      "etudiantId": 14,
+      "noteCC": 18,
+      "noteExamen": 19,
+      "noteFinale": 18.7,
+      "absent": false
+    },
+    {
+      "id": "30",
+      "examenId": 2,
+      "etudiantId": 15,
+      "noteCC": 2,
+      "noteExamen": 3,
+      "noteFinale": 2.7,
+      "absent": false
+    },
+    {
+      "id": "31",
+      "examenId": 3,
+      "etudiantId": 1,
+      "noteCC": null,
+      "noteExamen": 13,
+      "noteFinale": 13,
+      "absent": false
+    },
+    {
+      "id": "32",
+      "examenId": 3,
+      "etudiantId": 2,
+      "noteCC": null,
+      "noteExamen": 11,
+      "noteFinale": 11,
+      "absent": false
+    },
+    {
+      "id": "33",
+      "examenId": 3,
+      "etudiantId": 3,
+      "noteCC": null,
+      "noteExamen": 6,
+      "noteFinale": 6,
+      "absent": false
+    },
+    {
+      "id": "34",
+      "examenId": 3,
+      "etudiantId": 4,
+      "noteCC": null,
+      "noteExamen": 17,
+      "noteFinale": 17,
+      "absent": false
+    },
+    {
+      "id": "35",
+      "examenId": 3,
+      "etudiantId": 5,
+      "noteCC": null,
+      "noteExamen": 9,
+      "noteFinale": 9,
+      "absent": false
+    },
+    {
+      "id": "36",
+      "examenId": 3,
+      "etudiantId": 6,
+      "noteCC": null,
+      "noteExamen": 14,
+      "noteFinale": 14,
+      "absent": false
+    },
+    {
+      "id": "37",
+      "examenId": 3,
+      "etudiantId": 7,
+      "noteCC": null,
+      "noteExamen": 4,
+      "noteFinale": 4,
+      "absent": false
+    },
+    {
+      "id": "38",
+      "examenId": 3,
+      "etudiantId": 8,
+      "noteCC": null,
+      "noteExamen": 12,
+      "noteFinale": 12,
+      "absent": false
+    },
+    {
+      "id": "39",
+      "examenId": 3,
+      "etudiantId": 9,
+      "noteCC": null,
+      "noteExamen": 10,
+      "noteFinale": 10,
+      "absent": false
+    },
+    {
+      "id": "40",
+      "examenId": 3,
+      "etudiantId": 10,
+      "noteCC": null,
+      "noteExamen": 15,
+      "noteFinale": 15,
+      "absent": false
+    },
+    {
+      "id": "41",
+      "examenId": 3,
+      "etudiantId": 11,
+      "noteCC": null,
+      "noteExamen": 8,
+      "noteFinale": 8,
+      "absent": false
+    },
+    {
+      "id": "42",
+      "examenId": 3,
+      "etudiantId": 12,
+      "noteCC": null,
+      "noteExamen": 13,
+      "noteFinale": 13,
+      "absent": false
+    },
+    {
+      "id": "43",
+      "examenId": 3,
+      "etudiantId": 13,
+      "noteCC": null,
+      "noteExamen": 6,
+      "noteFinale": 6,
+      "absent": false
+    },
+    {
+      "id": "44",
+      "examenId": 3,
+      "etudiantId": 14,
+      "noteCC": null,
+      "noteExamen": 18,
+      "noteFinale": 18,
+      "absent": false
+    },
+    {
+      "id": "45",
+      "examenId": 3,
+      "etudiantId": 15,
+      "noteCC": null,
+      "noteExamen": 3,
+      "noteFinale": 3,
+      "absent": false
+    },
+    {
+      "id": "46",
+      "examenId": 4,
+      "etudiantId": 1,
+      "noteCC": 13,
+      "noteExamen": 12,
+      "noteFinale": 12.3,
+      "absent": false
+    },
+    {
+      "id": "47",
+      "examenId": 4,
+      "etudiantId": 2,
+      "noteCC": 11,
+      "noteExamen": 10,
+      "noteFinale": 10.3,
+      "absent": false
+    },
+    {
+      "id": "48",
+      "examenId": 4,
+      "etudiantId": 3,
+      "noteCC": 7,
+      "noteExamen": 8,
+      "noteFinale": 7.7,
+      "absent": false
+    },
+    {
+      "id": "49",
+      "examenId": 4,
+      "etudiantId": 4,
+      "noteCC": 16,
+      "noteExamen": 15,
+      "noteFinale": 15.3,
+      "absent": false
+    },
+    {
+      "id": "50",
+      "examenId": 4,
+      "etudiantId": 5,
+      "noteCC": 9,
+      "noteExamen": 7,
+      "noteFinale": 7.6,
+      "absent": false
+    },
+    {
+      "id": "51",
+      "examenId": 4,
+      "etudiantId": 6,
+      "noteCC": 15,
+      "noteExamen": 13,
+      "noteFinale": 13.6,
+      "absent": false
+    },
+    {
+      "id": "52",
+      "examenId": 4,
+      "etudiantId": 7,
+      "noteCC": 3,
+      "noteExamen": 4,
+      "noteFinale": 3.7,
+      "absent": false
+    },
+    {
+      "id": "53",
+      "examenId": 4,
+      "etudiantId": 8,
+      "noteCC": 10,
+      "noteExamen": 11,
+      "noteFinale": 10.7,
+      "absent": false
+    },
+    {
+      "id": "54",
+      "examenId": 4,
+      "etudiantId": 9,
+      "noteCC": 8,
+      "noteExamen": 9,
+      "noteFinale": 8.7,
+      "absent": false
+    },
+    {
+      "id": "55",
+      "examenId": 4,
+      "etudiantId": 10,
+      "noteCC": 17,
+      "noteExamen": 16,
+      "noteFinale": 16.3,
+      "absent": false
+    },
+    {
+      "id": "56",
+      "examenId": 4,
+      "etudiantId": 11,
+      "noteCC": 5,
+      "noteExamen": 6,
+      "noteFinale": 5.7,
+      "absent": false
+    },
+    {
+      "id": "57",
+      "examenId": 4,
+      "etudiantId": 12,
+      "noteCC": 14,
+      "noteExamen": 13,
+      "noteFinale": 13.3,
+      "absent": false
+    },
+    {
+      "id": "58",
+      "examenId": 4,
+      "etudiantId": 13,
+      "noteCC": 4,
+      "noteExamen": 5,
+      "noteFinale": 4.7,
+      "absent": false
+    },
+    {
+      "id": "59",
+      "examenId": 4,
+      "etudiantId": 14,
+      "noteCC": 19,
+      "noteExamen": 18,
+      "noteFinale": 18.3,
+      "absent": false
+    },
+    {
+      "id": "60",
+      "examenId": 4,
+      "etudiantId": 15,
+      "noteCC": 2,
+      "noteExamen": 3,
+      "noteFinale": 2.7,
+      "absent": false
+    },
+    {
+      "id": "61",
+      "examenId": 5,
+      "etudiantId": 1,
+      "noteCC": null,
+      "noteExamen": 14,
+      "noteFinale": 14,
+      "absent": false
+    },
+    {
+      "id": "62",
+      "examenId": 5,
+      "etudiantId": 2,
+      "noteCC": null,
+      "noteExamen": 10,
+      "noteFinale": 10,
+      "absent": false
+    },
+    {
+      "id": "63",
+      "examenId": 5,
+      "etudiantId": 3,
+      "noteCC": null,
+      "noteExamen": 7,
+      "noteFinale": 7,
+      "absent": false
+    },
+    {
+      "id": "64",
+      "examenId": 5,
+      "etudiantId": 4,
+      "noteCC": null,
+      "noteExamen": 16,
+      "noteFinale": 16,
+      "absent": false
+    },
+    {
+      "id": "65",
+      "examenId": 5,
+      "etudiantId": 5,
+      "noteCC": null,
+      "noteExamen": 8,
+      "noteFinale": 8,
+      "absent": false
+    },
+    {
+      "id": "66",
+      "examenId": 5,
+      "etudiantId": 6,
+      "noteCC": null,
+      "noteExamen": 13,
+      "noteFinale": 13,
+      "absent": false
+    },
+    {
+      "id": "67",
+      "examenId": 5,
+      "etudiantId": 7,
+      "noteCC": null,
+      "noteExamen": 3,
+      "noteFinale": 3,
+      "absent": false
+    },
+    {
+      "id": "68",
+      "examenId": 5,
+      "etudiantId": 8,
+      "noteCC": null,
+      "noteExamen": 11,
+      "noteFinale": 11,
+      "absent": false
+    },
+    {
+      "id": "69",
+      "examenId": 5,
+      "etudiantId": 9,
+      "noteCC": null,
+      "noteExamen": 9,
+      "noteFinale": 9,
+      "absent": false
+    },
+    {
+      "id": "70",
+      "examenId": 5,
+      "etudiantId": 10,
+      "noteCC": null,
+      "noteExamen": 17,
+      "noteFinale": 17,
+      "absent": false
+    },
+    {
+      "id": "71",
+      "examenId": 5,
+      "etudiantId": 11,
+      "noteCC": null,
+      "noteExamen": 6,
+      "noteFinale": 6,
+      "absent": false
+    },
+    {
+      "id": "72",
+      "examenId": 5,
+      "etudiantId": 12,
+      "noteCC": null,
+      "noteExamen": 12,
+      "noteFinale": 12,
+      "absent": false
+    },
+    {
+      "id": "73",
+      "examenId": 5,
+      "etudiantId": 13,
+      "noteCC": null,
+      "noteExamen": 5,
+      "noteFinale": 5,
+      "absent": false
+    },
+    {
+      "id": "74",
+      "examenId": 5,
+      "etudiantId": 14,
+      "noteCC": null,
+      "noteExamen": 19,
+      "noteFinale": 19,
+      "absent": false
+    },
+    {
+      "id": "75",
+      "examenId": 5,
+      "etudiantId": 15,
+      "noteCC": null,
+      "noteExamen": 2,
+      "noteFinale": 2,
+      "absent": false
+    },
+    {
+      "id": "76",
+      "examenId": 6,
+      "etudiantId": 1,
+      "noteCC": 14,
+      "noteExamen": 13,
+      "noteFinale": 13.3,
+      "absent": false
+    },
+    {
+      "id": "77",
+      "examenId": 6,
+      "etudiantId": 2,
+      "noteCC": 11,
+      "noteExamen": 12,
+      "noteFinale": 11.7,
+      "absent": false
+    },
+    {
+      "id": "78",
+      "examenId": 6,
+      "etudiantId": 3,
+      "noteCC": 6,
+      "noteExamen": 7,
+      "noteFinale": 6.7,
+      "absent": false
+    },
+    {
+      "id": "79",
+      "examenId": 6,
+      "etudiantId": 4,
+      "noteCC": 17,
+      "noteExamen": 16,
+      "noteFinale": 16.3,
+      "absent": false
+    },
+    {
+      "id": "80",
+      "examenId": 6,
+      "etudiantId": 5,
+      "noteCC": 8,
+      "noteExamen": 7,
+      "noteFinale": 7.3,
+      "absent": false
+    },
+    {
+      "id": "81",
+      "examenId": 6,
+      "etudiantId": 6,
+      "noteCC": 15,
+      "noteExamen": 14,
+      "noteFinale": 14.3,
+      "absent": false
+    },
+    {
+      "id": "82",
+      "examenId": 6,
+      "etudiantId": 7,
+      "noteCC": 4,
+      "noteExamen": 3,
+      "noteFinale": 3.3,
+      "absent": false
+    },
+    {
+      "id": "83",
+      "examenId": 6,
+      "etudiantId": 8,
+      "noteCC": 12,
+      "noteExamen": 11,
+      "noteFinale": 11.3,
+      "absent": false
+    },
+    {
+      "id": "84",
+      "examenId": 6,
+      "etudiantId": 9,
+      "noteCC": 9,
+      "noteExamen": 8,
+      "noteFinale": 8.3,
+      "absent": false
+    },
+    {
+      "id": "85",
+      "examenId": 6,
+      "etudiantId": 10,
+      "noteCC": 16,
+      "noteExamen": 17,
+      "noteFinale": 16.7,
+      "absent": false
+    },
+    {
+      "id": "86",
+      "examenId": 6,
+      "etudiantId": 11,
+      "noteCC": 7,
+      "noteExamen": 6,
+      "noteFinale": 6.3,
+      "absent": false
+    },
+    {
+      "id": "87",
+      "examenId": 6,
+      "etudiantId": 12,
+      "noteCC": 14,
+      "noteExamen": 13,
+      "noteFinale": 13.3,
+      "absent": false
+    },
+    {
+      "id": "88",
+      "examenId": 6,
+      "etudiantId": 13,
+      "noteCC": 5,
+      "noteExamen": 4,
+      "noteFinale": 4.3,
+      "absent": false
+    },
+    {
+      "id": "89",
+      "examenId": 6,
+      "etudiantId": 14,
+      "noteCC": 18,
+      "noteExamen": 19,
+      "noteFinale": 18.7,
+      "absent": false
+    },
+    {
+      "id": "90",
+      "examenId": 6,
+      "etudiantId": 15,
+      "noteCC": 2,
+      "noteExamen": 3,
+      "noteFinale": 2.7,
+      "absent": false
+    }
   ],
-  "deliberations": []
+  "deliberations": [
+    {
+      "etudiantId": "1",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 1,
+      "id": "ywpDAtZqO_M"
+    },
+    {
+      "etudiantId": "2",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 2,
+      "id": "UbTpGMMhC40"
+    },
+    {
+      "etudiantId": "3",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 3,
+      "id": "mNjtSN3I9EY"
+    },
+    {
+      "etudiantId": "4",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 4,
+      "id": "U7cCfQZ4zqw"
+    },
+    {
+      "etudiantId": "5",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 5,
+      "id": "T5w5uJGYul0"
+    },
+    {
+      "etudiantId": "6",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 6,
+      "id": "5LyeSmVeink"
+    },
+    {
+      "etudiantId": "7",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 7,
+      "id": "dkb1qK9iZ5M"
+    },
+    {
+      "etudiantId": "8",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 8,
+      "id": "P4nzkW4CLec"
+    },
+    {
+      "etudiantId": "9",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 9,
+      "id": "OxmQD2i5dTw"
+    },
+    {
+      "etudiantId": "10",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 10,
+      "id": "93wvE93WxMA"
+    },
+    {
+      "etudiantId": "11",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 11,
+      "id": "zTqlZr2GPws"
+    },
+    {
+      "etudiantId": "12",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 12,
+      "id": "h8s-P9iIqx4"
+    },
+    {
+      "etudiantId": "13",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 13,
+      "id": "IE0KYK9glHg"
+    },
+    {
+      "etudiantId": "14",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 14,
+      "id": "IqWp5fqa96I"
+    },
+    {
+      "etudiantId": "15",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 15,
+      "id": "0rSZTqyN11s"
+    },
+    {
+      "etudiantId": "1",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 1,
+      "id": "iU1Cr5cG6U0"
+    },
+    {
+      "etudiantId": "2",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 2,
+      "id": "uSz7gNfFD10"
+    },
+    {
+      "etudiantId": "3",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 3,
+      "id": "MHi3JDSNPTg"
+    },
+    {
+      "etudiantId": "4",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 4,
+      "id": "YrJO_oitPXg"
+    },
+    {
+      "etudiantId": "5",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 5,
+      "id": "R9KtlJo8kqg"
+    },
+    {
+      "etudiantId": "6",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 6,
+      "id": "MV6H9RcdnPw"
+    },
+    {
+      "etudiantId": "7",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 7,
+      "id": "9lDpK3gbmxg"
+    },
+    {
+      "etudiantId": "8",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 8,
+      "id": "A6Vvpc5JdLA"
+    },
+    {
+      "etudiantId": "9",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 9,
+      "id": "wmaMNS-BOzk"
+    },
+    {
+      "etudiantId": "10",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 10,
+      "id": "RvV7nnOH9g4"
+    },
+    {
+      "etudiantId": "11",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 11,
+      "id": "Ou_iIQ3bw1I"
+    },
+    {
+      "etudiantId": "12",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 12,
+      "id": "ZSG9TTqEZq4"
+    },
+    {
+      "etudiantId": "13",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 13,
+      "id": "sguqU-zENrY"
+    },
+    {
+      "etudiantId": "14",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 14,
+      "id": "1ZoFT74w8K0"
+    },
+    {
+      "etudiantId": "15",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 15,
+      "id": "gze09f_ynHw"
+    },
+    {
+      "etudiantId": "1",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 1,
+      "id": "HMzJRssX6Qc"
+    },
+    {
+      "etudiantId": "2",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 2,
+      "id": "_HIItfNY3f8"
+    },
+    {
+      "etudiantId": "3",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 3,
+      "id": "QRvpXcn5XZw"
+    },
+    {
+      "etudiantId": "4",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 4,
+      "id": "3qmisFQhEAA"
+    },
+    {
+      "etudiantId": "5",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 5,
+      "id": "xJh1m3YEh6Q"
+    },
+    {
+      "etudiantId": "6",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 6,
+      "id": "q3imqGiDtr8"
+    },
+    {
+      "etudiantId": "7",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 7,
+      "id": "siT1JdUl9CE"
+    },
+    {
+      "etudiantId": "8",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 8,
+      "id": "mXvDVG5xY1c"
+    },
+    {
+      "etudiantId": "9",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 9,
+      "id": "k-GcVPZrDr4"
+    },
+    {
+      "etudiantId": "10",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 10,
+      "id": "hWaDQUJX2AA"
+    },
+    {
+      "etudiantId": "11",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 11,
+      "id": "XercoYRWSpA"
+    },
+    {
+      "etudiantId": "12",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 12,
+      "id": "CyBTu7PGrOo"
+    },
+    {
+      "etudiantId": "13",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 13,
+      "id": "f_cjfv8-8Ig"
+    },
+    {
+      "etudiantId": "14",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 14,
+      "id": "8RCIyaIpo60"
+    },
+    {
+      "etudiantId": "15",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 15,
+      "id": "DTdO9oMFToE"
+    },
+    {
+      "etudiantId": "1",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 1,
+      "id": "aJ0T_msHeiE"
+    },
+    {
+      "etudiantId": "2",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 2,
+      "id": "sSC8NhF3QSQ"
+    },
+    {
+      "etudiantId": "3",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 3,
+      "id": "EHdc__SalRs"
+    },
+    {
+      "etudiantId": "4",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 4,
+      "id": "A8Z71a6XuI8"
+    },
+    {
+      "etudiantId": "5",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 5,
+      "id": "M7pV_wcdZCA"
+    },
+    {
+      "etudiantId": "6",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 6,
+      "id": "QxPwyMxgAYY"
+    },
+    {
+      "etudiantId": "7",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 7,
+      "id": "Nwn7RHasEtw"
+    },
+    {
+      "etudiantId": "8",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 8,
+      "id": "25OU9CkelP0"
+    },
+    {
+      "etudiantId": "9",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 9,
+      "id": "SSQyVDpEA8c"
+    },
+    {
+      "etudiantId": "10",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 10,
+      "id": "49WCVhtvVxc"
+    },
+    {
+      "etudiantId": "11",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 11,
+      "id": "NmJVBoRowaA"
+    },
+    {
+      "etudiantId": "12",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 12,
+      "id": "jP1BtnsCApc"
+    },
+    {
+      "etudiantId": "13",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 13,
+      "id": "cmpQu0B8wRA"
+    },
+    {
+      "etudiantId": "14",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 14,
+      "id": "lEAF9vStHsA"
+    },
+    {
+      "etudiantId": "15",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 15,
+      "id": "Dpk8aYFmtpQ"
+    },
+    {
+      "etudiantId": "1",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 1,
+      "id": "Nx9AjSZDcYc"
+    },
+    {
+      "etudiantId": "2",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 2,
+      "id": "1dgUUYz49Yc"
+    },
+    {
+      "etudiantId": "3",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 3,
+      "id": "TFZrCLmOYrg"
+    },
+    {
+      "etudiantId": "4",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 4,
+      "id": "jK-lqXOhmN4"
+    },
+    {
+      "etudiantId": "5",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 5,
+      "id": "ecJ0YvaPoOw"
+    },
+    {
+      "etudiantId": "6",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 6,
+      "id": "2IGm-AOdQrA"
+    },
+    {
+      "etudiantId": "7",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 7,
+      "id": "vl4owiMgO0Y"
+    },
+    {
+      "etudiantId": "8",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 8,
+      "id": "ZbIkHolvRLM"
+    },
+    {
+      "etudiantId": "9",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 9,
+      "id": "W3sX1tHi3Dg"
+    },
+    {
+      "etudiantId": "10",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 10,
+      "id": "mJQn3qCYYZY"
+    },
+    {
+      "etudiantId": "11",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 11,
+      "id": "WnwmtzK17hU"
+    },
+    {
+      "etudiantId": "12",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 12,
+      "id": "fYeVhkhwLkM"
+    },
+    {
+      "etudiantId": "13",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 13,
+      "id": "H3MX2JShc64"
+    },
+    {
+      "etudiantId": "14",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 14,
+      "id": "1MsK-Jh08j8"
+    },
+    {
+      "etudiantId": "15",
+      "sessionId": "1",
+      "moyenne": 0,
+      "decision": "rattrapage",
+      "mention": "aucune",
+      "modulesNonValides": 0,
+      "modulesSous5": 0,
+      "rang": 15,
+      "id": "4ADZtATOcZ4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
