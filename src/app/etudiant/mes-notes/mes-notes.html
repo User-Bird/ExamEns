@@ -1,1 +1,71 @@
-<p>mes-notes works!</p>
+<div class="page">
+  <div class="page-header">
+    <h2>📚 Mes Notes</h2>
+    <a routerLink="/etudiant/releve-notes" class="btn btn-secondary">🖨️ Imprimer le relevé</a>
+  </div>
+
+  @if (loading()) { <div class="loading">Chargement...</div> }
+  @if (error())   { <div class="alert-error">{{ error() }}</div> }
+
+  @if (!loading() && noteRows().length > 0) {
+
+    <!-- Deliberation banner -->
+    @if (deliberation()) {
+      <div class="delib-banner">
+        <span>Moyenne : <strong>{{ moyenne() | noteFormat }}</strong></span>
+        <span>Décision : <strong>{{ deliberation()!.decision | decisionLabel }}</strong></span>
+        <span>Mention : <strong>{{ deliberation()!.mention | mention }}</strong></span>
+        <span>Rang : <strong>#{{ deliberation()!.rang }}</strong></span>
+      </div>
+    }
+
+    <!-- Notes table -->
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Module</th>
+          <th>Code</th>
+          <th>Coef.</th>
+          <th>CC</th>
+          <th>Examen</th>
+          <th>Note Finale</th>
+          <th>Statut</th>
+        </tr>
+        </thead>
+        <tbody>
+          @for (row of noteRows(); track row.moduleCode) {
+            <tr [class.row-fail]="!row.valide">
+              <td>{{ row.moduleNom }}</td>
+              <td>{{ row.moduleCode }}</td>
+              <td>{{ row.coefficient }}</td>
+              <td>{{ row.noteCC !== null ? (row.noteCC | noteFormat) : '—' }}</td>
+              <td>{{ row.noteExamen | noteFormat }}</td>
+              <td [style.color]="row.valide ? 'green' : 'red'">
+                <strong>{{ row.noteFinale | noteFormat }}</strong>
+              </td>
+              <td>
+                @if (row.absent) { <span class="badge-danger">Absent</span> }
+                @else if (row.valide) { <span class="badge-success">Validé</span> }
+                @else { <span class="badge-warning">Non validé</span> }
+              </td>
+            </tr>
+          }
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="5"><strong>Moyenne générale</strong></td>
+          <td [style.color]="moyenne() >= 10 ? 'green' : 'red'">
+            <strong>{{ moyenne() | noteFormat }}</strong>
+          </td>
+          <td></td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  }
+
+  @if (!loading() && noteRows().length === 0 && !error()) {
+    <div class="empty-state">Aucune note disponible pour le moment.</div>
+  }
+</div>

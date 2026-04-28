@@ -1,1 +1,83 @@
-<p>releve-notes works!</p>
+<!-- Print button — hidden when printing -->
+<div class="no-print" style="padding: 1rem;">
+  <button class="btn btn-primary" (click)="print()">🖨️ Imprimer</button>
+  <a href="/etudiant/mes-notes" class="btn btn-secondary">← Retour</a>
+</div>
+
+@if (loading()) { <div class="loading no-print">Chargement...</div> }
+
+@if (!loading() && etudiant()) {
+  <div class="releve">
+
+    <!-- Header -->
+    <div class="releve-header">
+      <div class="releve-logo">🎓</div>
+      <div>
+        <h1>École Normale Supérieure de Meknès</h1>
+        <p>Département Informatique — Année universitaire {{ annee }}</p>
+      </div>
+    </div>
+
+    <h2 class="releve-title">RELEVÉ DE NOTES</h2>
+
+    <!-- Student info -->
+    <div class="releve-info">
+      <div><span>Nom :</span> <strong>{{ etudiant()!.nom }} {{ etudiant()!.prenom }}</strong></div>
+      <div><span>CNE :</span> {{ etudiant()!.cne }}</div>
+      <div><span>CIN :</span> {{ etudiant()!.cin }}</div>
+      <div><span>Groupe :</span> {{ etudiant()!.groupe }}</div>
+    </div>
+
+    <hr/>
+
+    <!-- Notes table -->
+    <table class="releve-table">
+      <thead>
+      <tr>
+        <th>Module</th>
+        <th>Code</th>
+        <th>Coef.</th>
+        <th>CC (/20)</th>
+        <th>Examen (/20)</th>
+        <th>Note Finale (/20)</th>
+        <th>Résultat</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (row of noteRows(); track row.moduleCode) {
+          <tr>
+            <td>{{ row.moduleNom }}</td>
+            <td>{{ row.moduleCode }}</td>
+            <td>{{ row.coefficient }}</td>
+            <td>{{ row.noteCC !== null ? (row.noteCC | noteFormat) : '—' }}</td>
+            <td>{{ row.noteExamen | noteFormat }}</td>
+            <td><strong>{{ row.noteFinale | noteFormat }}</strong></td>
+            <td>{{ row.valide ? 'Validé' : 'Non validé' }}</td>
+          </tr>
+        }
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="5"><strong>Moyenne Générale Pondérée</strong></td>
+        <td><strong>{{ moyenne() | noteFormat }}</strong></td>
+        <td></td>
+      </tr>
+      </tfoot>
+    </table>
+
+    <!-- Result -->
+    @if (deliberation()) {
+      <div class="releve-result">
+        <div><span>Décision :</span> <strong>{{ deliberation()!.decision | decisionLabel }}</strong></div>
+        <div><span>Mention :</span> <strong>{{ deliberation()!.mention | mention }}</strong></div>
+        <div><span>Classement :</span> <strong>{{ deliberation()!.rang }}ème</strong></div>
+      </div>
+    }
+
+    <div class="releve-footer">
+      <p>Fait à Meknès, le {{ annee }}</p>
+      <p>Signature et cachet</p>
+      <div class="signature-box"></div>
+    </div>
+  </div>
+}

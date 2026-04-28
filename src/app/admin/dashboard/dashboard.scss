@@ -1,0 +1,62 @@
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.kpi-card {
+  background: #f8f7ff;
+  border: 1px solid #e0e0ff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+
+  .kpi-icon  { font-size: 2rem; margin-bottom: 0.5rem; }
+  .kpi-value { font-size: 2rem; font-weight: bold; color: #4f46e5; }
+  .kpi-label { color: #666; font-size: 0.9rem; margin-top: 0.25rem; }
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chart-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+
+  h3 { margin: 0 0 1rem; font-size: 0.95rem; color: #374151; }
+}
+
+.topflop-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.topflop-card {
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid #e5e7eb;
+
+  h3 { margin: 0 0 1rem; }
+
+  &.top { background: #f0fdf4; border-color: #bbf7d0; }
+  &.flop { background: #fff7ed; border-color: #fed7aa; }
+}
+
+.topflop-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #eee;
+
+  .rank { font-weight: bold; color: #6366f1; width: 40px; }
+  .moy  { font-weight: bold; }
+}

@@ -1,1 +1,76 @@
-<p>dashboard works!</p>
+<div class="page">
+  <div class="page-header">
+    <h2>📊 Dashboard Admin</h2>
+  </div>
+
+  @if (loading()) { <div class="loading">Chargement...</div> }
+
+  @if (!loading()) {
+
+    <!-- 4 KPIs -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon">👥</div>
+        <div class="kpi-value">{{ totalEtudiants() }}</div>
+        <div class="kpi-label">Étudiants</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">📚</div>
+        <div class="kpi-value">{{ totalModules() }}</div>
+        <div class="kpi-label">Modules</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">✅</div>
+        <div class="kpi-value">{{ tauxReussite() }}%</div>
+        <div class="kpi-label">Taux de réussite</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon">📈</div>
+        <div class="kpi-value">{{ moyenneGenerale() | noteFormat }}</div>
+        <div class="kpi-label">Moyenne générale</div>
+      </div>
+    </div>
+
+    <!-- 3 Charts -->
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h3>Répartition des décisions</h3>
+        <canvas #chartDecisions></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Moyenne par module</h3>
+        <canvas #chartMoyennes></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Distribution des moyennes</h3>
+        <canvas #chartDistrib></canvas>
+      </div>
+    </div>
+
+    <!-- Top / Flop -->
+    @if (deliberations().length > 0) {
+      <div class="topflop-grid">
+        <div class="topflop-card top">
+          <h3>🏆 Top 3</h3>
+          @for (d of top3(); track d.etudiantId) {
+            <div class="topflop-row">
+              <span class="rank">#{{ d.rang }}</span>
+              <span>Étudiant #{{ d.etudiantId }}</span>
+              <span class="moy">{{ d.moyenne | noteFormat }}</span>
+            </div>
+          }
+        </div>
+        <div class="topflop-card flop">
+          <h3>📉 Flop 3</h3>
+          @for (d of flop3(); track d.etudiantId) {
+            <div class="topflop-row">
+              <span class="rank">#{{ d.rang }}</span>
+              <span>Étudiant #{{ d.etudiantId }}</span>
+              <span class="moy">{{ d.moyenne | noteFormat }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  }
+</div>
