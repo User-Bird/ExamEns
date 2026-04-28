@@ -1,1 +1,73 @@
-<p>login works!</p>
+<div class="login-page">
+  <div class="login-card">
+
+    <!-- Header -->
+    <div class="login-header">
+      <div class="logo">
+        <span class="logo-icon">🎓</span>
+      </div>
+      <h1>ExamENS</h1>
+      <p>Gestion des Examens & Notes</p>
+      <span class="badge">ENS Meknès</span>
+    </div>
+
+    <!-- Error -->
+    @if (errorMsg()) {
+      <div class="alert-error">
+        <span>⚠️</span> {{ errorMsg() }}
+      </div>
+    }
+
+    <!-- Form -->
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+      <div class="field">
+        <label for="email">Adresse email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="votre@email.ma"
+          [class.invalid]="form.get('email')!.invalid && form.get('email')!.touched"
+        />
+        @if (form.get('email')!.invalid && form.get('email')!.touched) {
+          <span class="field-error">Email invalide</span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="password">Mot de passe</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="••••••••"
+          [class.invalid]="form.get('password')!.invalid && form.get('password')!.touched"
+        />
+        @if (form.get('password')!.invalid && form.get('password')!.touched) {
+          <span class="field-error">Mot de passe requis</span>
+        }
+      </div>
+
+      <button type="submit" class="btn-login" [disabled]="loading()">
+        @if (loading()) {
+          <span class="spinner"></span> Connexion...
+        } @else {
+          Se connecter
+        }
+      </button>
+
+    </form>
+
+    <!-- Demo shortcuts -->
+    <div class="demo-section">
+      <p class="demo-title">Accès rapide (demo)</p>
+      <div class="demo-btns">
+        <button type="button" class="demo-btn admin"      (click)="fillAdmin()">Admin</button>
+        <button type="button" class="demo-btn enseignant" (click)="fillEnseignant()">Enseignant</button>
+        <button type="button" class="demo-btn etudiant"   (click)="fillEtudiant()">Étudiant</button>
+      </div>
+    </div>
+
+  </div>
+</div>
