@@ -1,1 +1,59 @@
-<p>session-list works!</p>
+<div class="page">
+  <div class="page-header">
+    <h2>📅 Sessions d'Examen</h2>
+    <a routerLink="/admin/sessions/new" class="btn btn-primary">+ Nouvelle Session</a>
+  </div>
+
+  @if (loading()) {
+    <div class="loading">Chargement...</div>
+  }
+
+  @if (error()) {
+    <div class="alert-error">{{ error() }}</div>
+  }
+
+  @if (!loading() && sessions().length === 0) {
+    <div class="empty-state">Aucune session trouvée.</div>
+  }
+
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Type</th>
+        <th>Semestre</th>
+        <th>Début</th>
+        <th>Fin</th>
+        <th>Statut</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (session of sessions(); track session.id) {
+          <tr>
+            <td>{{ session.id }}</td>
+            <td>
+              <span [class]="session.type === 'normale' ? 'badge-blue' : 'badge-orange'">
+                {{ session.type === 'normale' ? 'Normale' : 'Rattrapage' }}
+              </span>
+            </td>
+            <td>S{{ session.semestreId }}</td>
+            <td>{{ session.dateDebut }}</td>
+            <td>{{ session.dateFin }}</td>
+            <td><span [class]="statusClass(session.statut)">{{ statusLabel(session.statut) }}</span></td>
+            <td class="actions">
+              @if (session.statut !== 'deliberee') {
+                <button class="btn btn-sm btn-secondary" (click)="advance(session)">
+                  {{ nextStatusLabel(session.statut) }}
+                </button>
+              }
+              <a [routerLink]="['/admin/sessions/edit', session.id]" class="btn btn-sm btn-warning">✏</a>
+              <button class="btn btn-sm btn-danger" (click)="delete(session.id)">🗑</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

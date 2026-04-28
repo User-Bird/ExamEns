@@ -32,7 +32,7 @@ export const routes: Routes = [
     canActivate: [authGuard, roleGuard],
     data: { roles: ['etudiant'] },
     loadChildren: () =>
-      import('./etudiant/etudiant').then(m => m.etudiantRoutes)
+      import('./enseignant/enseignant-routes').then(m => m.enseignantRoutes)
   },
 
   { path: '**', redirectTo: '/login' }

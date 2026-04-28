@@ -1,1 +1,60 @@
-<p>session-form works!</p>
+<div class="page">
+  <div class="page-header">
+    <h2>{{ isEdit() ? '✏️ Modifier' : '➕ Nouvelle' }} Session</h2>
+    <a routerLink="/admin/sessions" class="btn btn-secondary">← Retour</a>
+  </div>
+
+  @if (error()) {
+    <div class="alert-error">{{ error() }}</div>
+  }
+
+  <div class="form-card">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="form-row">
+        <div class="field">
+          <label>Semestre ID</label>
+          <input type="number" formControlName="semestreId" min="1" />
+        </div>
+
+        <div class="field">
+          <label>Type</label>
+          <select formControlName="type">
+            <option value="normale">Normale</option>
+            <option value="rattrapage">Rattrapage</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label>Date de début</label>
+          <input type="date" formControlName="dateDebut" />
+        </div>
+
+        <div class="field">
+          <label>Date de fin</label>
+          <input type="date" formControlName="dateFin" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Statut</label>
+        <select formControlName="statut">
+          <option value="planifiee">Planifiée</option>
+          <option value="en-cours">En cours</option>
+          <option value="terminee">Terminée</option>
+          <option value="deliberee">Délibérée</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" [disabled]="loading()">
+          {{ loading() ? 'Sauvegarde...' : (isEdit() ? 'Modifier' : 'Créer') }}
+        </button>
+        <a routerLink="/admin/sessions" class="btn btn-secondary">Annuler</a>
+      </div>
+
+    </form>
+  </div>
+</div>
