@@ -1,3 +1,4 @@
+// src/app/app.routes.ts
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth-guard';
 import { roleGuard } from './core/guards/role-guard';
@@ -32,7 +33,7 @@ export const routes: Routes = [
     canActivate: [authGuard, roleGuard],
     data: { roles: ['etudiant'] },
     loadChildren: () =>
-      import('./enseignant/enseignant-routes').then(m => m.enseignantRoutes)
+      import('./etudiant/etudiant-routes').then(m => m.etudiantRoutes)  // ← fixed
   },
 
   { path: '**', redirectTo: '/login' }
