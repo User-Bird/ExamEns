@@ -1,1 +1,13 @@
-<p>sidebar works!</p>
+<!-- sidebar.html -->
+<nav class="sidebar">
+  <div class="sidebar-brand">🎓 ExamENS</div>
+  <div class="sidebar-role">{{ auth.userRole() | titlecase }}</div>
+  <ul class="sidebar-nav">
+    @for (link of links(); track link.path) {
+      <li>
+        <a [routerLink]="link.path" routerLinkActive="active">{{ link.label }}</a>
+      </li>
+    }
+  </ul>
+  <button class="sidebar-logout" (click)="auth.logout()">🚪 Déconnexion</button>
+</nav>

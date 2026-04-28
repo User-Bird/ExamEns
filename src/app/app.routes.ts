@@ -8,7 +8,7 @@ export const routes: Routes = [
   {
     path: 'login',
     loadComponent: () =>
-      import('./auth/login/login').then(m => m.LoginComponent)
+      import('./auth/login/login').then(m => m.Login)
   },
 
   {
@@ -24,7 +24,7 @@ export const routes: Routes = [
     canActivate: [authGuard, roleGuard],
     data: { roles: ['enseignant'] },
     loadChildren: () =>
-      import('./enseignant/enseignant').then(m => m.enseignantRoutes)
+      import('./enseignant/enseignant-routes').then(m => m.enseignantRoutes)
   },
 
   {
