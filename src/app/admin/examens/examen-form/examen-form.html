@@ -1,1 +1,86 @@
-<p>examen-form works!</p>
+<div class="page">
+  <div class="page-header">
+    <h2>{{ isEdit() ? '✏️ Modifier' : '➕ Nouvel' }} Examen</h2>
+    <a routerLink="/admin/examens" class="btn btn-secondary">← Retour</a>
+  </div>
+
+  @if (loading()) {
+    <div class="loading">Chargement des données...</div>
+  }
+
+  @if (error()) {
+    <div class="alert-error">{{ error() }}</div>
+  }
+
+  @if (!loading()) {
+    <div class="form-card">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="form-row">
+          <div class="field">
+            <label>Module</label>
+            <select formControlName="moduleId">
+              <option [value]="null">-- Sélectionner --</option>
+              @for (m of modules(); track m.id) {
+                <option [value]="m.id">{{ m.code }} — {{ m.nom }}</option>
+              }
+            </select>
+            @if (form.get('moduleId')!.invalid && form.get('moduleId')!.touched) {
+              <span class="field-error">Module requis</span>
+            }
+          </div>
+
+          <div class="field">
+            <label>Session</label>
+            <select formControlName="sessionId">
+              <option [value]="null">-- Sélectionner --</option>
+              @for (s of sessions(); track s.id) {
+                <option [value]="s.id">
+                  Session {{ s.id }} — {{ s.type === 'normale' ? 'Normale' : 'Rattrapage' }}
+                  ({{ s.dateDebut }} → {{ s.dateFin }})
+                </option>
+              }
+            </select>
+            @if (form.get('sessionId')!.invalid && form.get('sessionId')!.touched) {
+              <span class="field-error">Session requise</span>
+            }
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label>Date de l'examen</label>
+            <input type="date" formControlName="date" />
+            @if (form.get('date')!.invalid && form.get('date')!.touched) {
+              <span class="field-error">Date requise</span>
+            }
+          </div>
+
+          <div class="field">
+            <label>Durée (minutes)</label>
+            <input type="number" formControlName="duree" min="30" max="300" />
+            @if (form.get('duree')!.invalid && form.get('duree')!.touched) {
+              <span class="field-error">Durée entre 30 et 300 min</span>
+            }
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Salle</label>
+          <input type="text" formControlName="salle" placeholder="Ex: Amphi A, Salle 12" />
+          @if (form.get('salle')!.invalid && form.get('salle')!.touched) {
+            <span class="field-error">Salle requise</span>
+          }
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" [disabled]="saving()">
+            {{ saving() ? 'Sauvegarde...' : (isEdit() ? 'Modifier' : 'Créer') }}
+          </button>
+          <a routerLink="/admin/examens" class="btn btn-secondary">Annuler</a>
+        </div>
+
+      </form>
+    </div>
+  }
+</div>

@@ -1,1 +1,63 @@
-<p>examen-list works!</p>
+<div class="page">
+  <div class="page-header">
+    <h2>📝 Examens</h2>
+    <a routerLink="/admin/examens/new" class="btn btn-primary">+ Nouvel Examen</a>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="filter-bar">
+    <label>Filtrer par session :</label>
+    <select (change)="onSessionFilter($event)">
+      <option value="all">Toutes les sessions</option>
+      @for (s of sessions(); track s.id) {
+        <option [value]="s.id">
+          Session {{ s.id }} — {{ s.type === 'normale' ? 'Normale' : 'Rattrapage' }} ({{ s.statut }})
+        </option>
+      }
+    </select>
+  </div>
+
+  @if (loading()) {
+    <div class="loading">Chargement...</div>
+  }
+
+  @if (error()) {
+    <div class="alert-error">{{ error() }}</div>
+  }
+
+  @if (!loading() && filteredExamens().length === 0) {
+    <div class="empty-state">Aucun examen trouvé.</div>
+  }
+
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Module</th>
+        <th>Session</th>
+        <th>Date</th>
+        <th>Durée</th>
+        <th>Salle</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (examen of filteredExamens(); track examen.id) {
+          <tr>
+            <td>{{ examen.id }}</td>
+            <td>{{ getModuleLabel(examen.moduleId) }}</td>
+            <td>{{ getSessionLabel(examen.sessionId) }}</td>
+            <td>{{ examen.date }}</td>
+            <td>{{ examen.duree }} min</td>
+            <td>{{ examen.salle }}</td>
+            <td class="actions">
+              <a [routerLink]="['/admin/examens/edit', examen.id]" class="btn btn-sm btn-warning">✏</a>
+              <button class="btn btn-sm btn-danger" (click)="delete(examen.id)">🗑</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
